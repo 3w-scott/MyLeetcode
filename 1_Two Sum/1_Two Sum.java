@@ -17,13 +17,13 @@ class Solution {
     }
 }
 
-
+//Answer2: 只进行一次遍历，将遍过的数据放入HashMap中做为key存储。用目标数减当前数，看是否存在于hashmap中。
 class Solution1 {
     public int[] twoSum(int[] nums, int target) {
         int[] result = new int[2];
-        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>(); //map的声明
         for (int i = 0; i < nums.length; i++) {
-            if (map.containsKey(target - nums[i])) {
+            if (map.containsKey(target - nums[i])) { //contaisKey
                 result[0] = map.get(target - nums[i]);
                 result[1] = i;
             }
@@ -32,5 +32,7 @@ class Solution1 {
         return result;
     }
 }
+
+
 
 
